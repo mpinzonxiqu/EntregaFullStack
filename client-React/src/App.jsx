@@ -1,26 +1,16 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { ProjectPage } from "./pages/ProjectPage";
-
-import { ProjectFormPage } from "./pages/ProjectFormPage";
-
-import './App.css'
-import { Navigation } from "./components/Navigation";
+import React from 'react';
+import './App.css';
+import UserList from './components/UserList';
 
 function App() {
-
-
   return (
-    <BrowserRouter>
-    <Navigation/>
-   
-    <Routes>
-    <Route path="/" element= {<Navigate to="/projects"/>}/> 
-    <Route path="/projects" element={<ProjectPage/>}/>
-    <Route path="/projects-create" element={<ProjectFormPage/>}/>
-    </Routes>
-
-    </BrowserRouter>
-  )
+    <div className="App">
+      <header className="App-header">
+        <h1>Buscar Usuarios GitHub </h1>
+        <UserList />
+      </header>
+    </div>
+  );
 }
 
-export default App
+export default App;
