@@ -40,9 +40,5 @@ public class TicketController {
         return ResponseEntity.ok(tickets);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Ticket> obtenerTicketPorId(@PathVariable Long id) {
-        Optional<Ticket> ticket = ticketService.obtenerTicketPorId(id);
-        return (ResponseEntity<Ticket>) ((Optional<?>) ticket).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
+
 }
